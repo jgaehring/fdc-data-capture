@@ -13,6 +13,20 @@ services:
     networks:
       triplestore:
         ipv4_address: 172.28.5.0
+  #   healthcheck:
+  #     test: ["CMD-SHELL", "curl -f http://localhost:3030 || exit 1"]
+  #     interval: 5s
+  #     timeout: 10s
+  #     retries: 3
+  #     start_period: 1s
+  # test-client:
+  #   build:
+  #     context: ./test/semapps
+  #     dockerfile: Dockerfile
+  #   depends_on:
+  #     fuseki:
+  #       condition: service_healthy
+  #       restart: true
 
 networks:
   triplestore:
